@@ -1,0 +1,42 @@
+ [
+        {
+            "categoryId":1,
+            "categoryName":"خودرو",
+            "icon":"Car.ico"
+        },
+        {
+            "categoryId":2,
+            "categoryName":"لوازم خانگی",
+            "icon":"Dishwasher.ico"
+        },
+        {
+            "categoryId":3,
+            "categoryName":"گوشی همراه",
+            "icon":"Touchscreen_Smartphone.ico"
+        },
+        {
+            "categoryId":4,
+            "categoryName":"لباس مردانه",
+            "icon":"Shirt.ico"
+        },
+        {
+            "categoryId":5,
+            "categoryName":"نوشت افزار",
+            "icon":"Scalpel.ico"
+        },
+        {
+            "categoryId":6,
+            "categoryName":"لپتاپ",
+            "icon":"Laptop.ico"
+        },
+        {
+            "categoryId":7,
+            "categoryName":"کفش",
+            "icon":"Boots.ico"
+        },
+        {
+            "categoryId":8,
+            "categoryName":"ابزارآلات",
+            "icon":"Maintenance.ico"
+        }
+]
