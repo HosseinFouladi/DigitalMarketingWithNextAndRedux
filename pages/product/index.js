@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../../redux/selectors/UserSelector";
-const index=()=>{
+const Index=()=>{
 
     const router=useRouter();
     const user=useSelector(selectCurrentUser);
@@ -19,11 +19,11 @@ const index=()=>{
 
     return(
        <div>
-           {user.name? <Layout children={<Dashboard type='product'/>}></Layout>:''}
+           {user.name? <Layout><Dashboard type='product'/></Layout>:''}
        </div>
     )
 }
-export default index;
+export default Index;
 
 /*export const getServerSideProps=wrapper.getServerSideProps(async({store})=>{
     await store.dispatch(insertAllCategories(categories));

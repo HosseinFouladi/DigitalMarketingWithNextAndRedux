@@ -86,7 +86,7 @@ const AddCategoryForm=()=>{
                 <FileInput type='file' id='avatarCat'  accept="image/*" required='true' onChange={handleImgCategory}/> 
             </UploadImageBox>}
             <ButtonBox>
-                <AddButton types={type} disabled={addLoading?true:false}loading={addLoading} name='add' onClick={handleAdd} onMouseEnter={handlType} types={'add'}>
+                <AddButton types={type} disabled={addLoading?true:false}loading={addLoading} name='add' onClick={handleAdd} onMouseEnter={handlType} >
                  <ButtonContent>
                  {!addLoading && <ButtonText>اضافه</ButtonText>}
                { addLoading && <Loader  viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
@@ -94,7 +94,7 @@ const AddCategoryForm=()=>{
                 </Loader>}
                  </ButtonContent>
                 </AddButton>
-                <AddButton types={type} disabled={editLoading?true:false} loading={editLoading} name='edit'onClick={handleEdit}onMouseEnter={handlType}  types={'edit'}>
+                <AddButton types={type} disabled={editLoading?true:false} loading={editLoading} name='edit'onClick={handleEdit}onMouseEnter={handlType}  >
                 <ButtonContent>
                  {!editLoading && <ButtonText>ویرایش</ButtonText>}
                {editLoading  && <Loader  viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">

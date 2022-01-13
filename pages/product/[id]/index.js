@@ -6,13 +6,15 @@ import { findproduct } from "../../../redux/actions/ProductActions";
 import { selectCurrentProduct } from "../../../redux/selectors/ProductSelector";
 import { useRouter } from "next/router";
 import { selectCurrentUser } from "../../../redux/selectors/UserSelector";
-const Product=({id})=>{
+const Product=()=>{
 
 
+     const id=window.location.href.split('/')[4];
      const dispatch=useDispatch();
      const prod=useSelector(selectCurrentProduct);
      const router=useRouter();
      const user=useSelector(selectCurrentUser);
+ 
      useEffect(()=>{
          if(!user.name){
              router.replace('/');
@@ -34,11 +36,11 @@ const Product=({id})=>{
 }
 export default Product;
 
-export async function getServerSideProps({params}) {
+/*export async function getServerSideProps({params}) {
 
     return {
       props: {
           id:params.id
       }, 
     }
-  }
+  }*/

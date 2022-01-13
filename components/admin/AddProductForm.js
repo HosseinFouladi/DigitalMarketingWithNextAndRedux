@@ -102,7 +102,7 @@ const AddProductForm=()=>{
                 <FileInput type='file' id='avatar' multiple  accept="image/*" required='true' onChange={handleImgProduct}/> 
             </UploadImageBox>}
             <ButtonBox>
-                <AddButton types={type} disabled={addLoadingProduct?true:false}loading={addLoadingProduct} name='add' onClick={handleAddProduct} onMouseEnter={handlTypeProduct} types={'add'}>
+                <AddButton types={type} disabled={addLoadingProduct?true:false}loading={addLoadingProduct} name='add' onClick={handleAddProduct} onMouseEnter={handlTypeProduct} >
                  <ButtonContent>
                  {!addLoadingProduct && <ButtonText>اضافه</ButtonText>}
                { addLoadingProduct && <Loader  viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
@@ -110,7 +110,7 @@ const AddProductForm=()=>{
                 </Loader>}
                  </ButtonContent>
                 </AddButton>
-                <AddButton types={type} disabled={editLoadingProduct?true:false} loading={editLoadingProduct} name='edit'onClick={handleEditProduct}onMouseEnter={handlTypeProduct}  types={'edit'}>
+                <AddButton types={type} disabled={editLoadingProduct?true:false} loading={editLoadingProduct} name='edit'onClick={handleEditProduct}onMouseEnter={handlTypeProduct}  >
                 <ButtonContent>
                  {!editLoadingProduct && <ButtonText>ویرایش</ButtonText>}
                {editLoadingProduct  && <Loader  viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">

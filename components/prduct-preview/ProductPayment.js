@@ -12,11 +12,11 @@ const ProductPayment=()=>{
 
     const product=useSelector(selectCurrentProduct);
     const dispatch=useDispatch();
-    const addToCart=useCallback(()=>{
+    const addToCart=()=>{
         dispatch(addProductToUser(product));
         dispatch(setCount());
         Notif('success','محصول مورد نظر با موفقیت به سبد کالا اضافه شد!','اضافه به سبد خرید');
-    })
+    }
     return(
         <Payment>
             <PaymentBox>

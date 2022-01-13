@@ -18,7 +18,7 @@ const Admin=()=>{
     },[])
     return(
         <div>
-           {user&& user.role=='ادمین'&& <Layout children={<AdminPreview/>}></Layout>}
+           {user&& user.role=='ادمین'&& <Layout><AdminPreview/></Layout>}
         </div>
       
     )

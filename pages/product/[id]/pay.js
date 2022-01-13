@@ -14,7 +14,7 @@ const Pay=()=>{
     },[])
     return (
        <div>
-           {user.name? <Layout children={<Payment/>}></Layout>:''}
+           {user.name? <Layout ><Payment/></Layout>:''}
        </div>
     )
 }
