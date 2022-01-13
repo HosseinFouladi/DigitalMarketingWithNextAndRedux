@@ -1,24 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { selectAllCategories, selectRelatedProduct,selectSearchedProducts,selectAllProducts } from "../../redux/selectors/ProductSelector";
-import { DashboardContainer, ProductContainer, ProductPreviewContainer, SidebarContainer, TestDiv } from "../../styles/dashboard/Dashboard.style";
-import { Paragraph } from "../../styles/register/Register.style";
-import SideBar from "../layout/SideBar";
+import {  selectRelatedProduct,selectSearchedProducts,selectAllProducts } from "../../redux/selectors/ProductSelector";
+import { DashboardContainer, ProductContainer, ProductPreviewContainer} from "../../styles/dashboard/Dashboard.style";
 import ProductCart from "./ProductCart";
 import ProductImage from "../prduct-preview/ProductImage";
-
-
- 
+import ProductDetail from '../prduct-preview/ProductDetail';
+import ProductPayment from "../prduct-preview/ProductPayment";
 
  const Dashboard=({type})=>{
  
-
    const relatedProducts=useSelector(selectRelatedProduct);
    const products=useSelector(selectAllProducts);
    const searchedProducts=useSelector(selectSearchedProducts);
-   useEffect(()=>{
-      console.log(relatedProducts);
-   },[relatedProducts])
+
     return(
        <DashboardContainer>
             {type=='product'?
@@ -38,12 +32,10 @@ import ProductImage from "../prduct-preview/ProductImage";
              :
               <ProductPreviewContainer>
                  <ProductImage></ProductImage>
-                 <ProductImage></ProductImage>
-                 <ProductImage></ProductImage>
+                 <ProductDetail></ProductDetail>
+                 <ProductPayment></ProductPayment>
               </ProductPreviewContainer> }
-           <SidebarContainer>
-              <SideBar></SideBar>
-           </SidebarContainer>
+      
        </DashboardContainer>
     )
         

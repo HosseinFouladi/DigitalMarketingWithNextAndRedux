@@ -1,14 +1,16 @@
 
 import { USERTYPES } from "../ActionTypes/Usertypes";
 import {HYDRATE} from 'next-redux-wrapper';
+import { addToCart, deleteProductFromCart, setReservedCount } from "../../utilities/UserHelper";
 
 const Initial_User={
     currentUser:{
         products:[],
         image:'',
-        imageUrl:null
-    }
-    ,
+        imageUrl:null,
+    },
+    userLoading:false,
+    errorUpload:null,
     users:[]
 }
 
@@ -21,17 +23,16 @@ export const UserReducer=(state=Initial_User,action)=>{
             return {
                 ...state,
                 ...action.payload.UserReducer,
-                  //page: wasBumpedOnClient ? state.page : action.payload.page, // keep existing state or use hydrated
             };
         case USERTYPES.SET_CURRENT_USER:
             return{
                 ...state,
-                currentUser:{...action.payload}
+                currentUser:{...state.currentUser,information:action.payload}
             }
             case USERTYPES.ADD_PRODUTC_TO_USER:
                 return{
                     ...state,
-                    currentUser:{...state.currentUser,products:[...state.currentUser.products,action.payload]}
+                    currentUser:{...state.currentUser,products:addToCart(state.currentUser.products,action.payload)}
                 }
                 case USERTYPES.SET_USER_IMAGE:
                     return{
@@ -46,8 +47,36 @@ export const UserReducer=(state=Initial_User,action)=>{
                         case USERTYPES.LOG_OUT :
                             return{
                                 ...state,
-                                currentUser:{...state.currentUser,products:[],imageUrl:null,image:''}
+                                currentUser:{products:[],imageUrl:null,image:''}
                             }
+                            case USERTYPES.TOGGLE_RESERVED_PRODUCT_COUNT:
+                                return{
+                                    ...state,
+                                    currentUser:{...state.currentUser,products:setReservedCount(state.currentUser.products,action.payload.product,action.payload.operator)}
+                                }
+                                case USERTYPES.DELETE_PRODUCT_FROM_CART:
+                                    return{
+                                        ...state,
+                                        currentUser:{...state.currentUser,products:deleteProductFromCart(state.currentUser.products,action.payload)}
+                                    }
+                                    case USERTYPES.START_UPLOADING_USER_PICTURE:
+                                        return{
+                                            ...state,
+                                            userLoading:true,
+                                            errorUpload:null,
+                                        }
+                                        case USERTYPES.SUCCESS_UPLOADING_USER_PICTURE:
+                                            return{
+                                                ...state,
+                                                userLoading:false,
+                                                currentUser:{...state.currentUser,...action.payload}
+                                            }
+                                            case USERTYPES.FAILURE_UPLOADING_USER_IMAGE:
+                                                return{
+                                                    ...state,
+                                                    userLoading:false,
+                                                    errorUpload:action.payload
+                                                }
                 
         default:
             return state;

@@ -1,32 +1,33 @@
 import styled from "styled-components";
-import {colors} from '../../utilities/GlobalVariablesStyles';
+import { colors} from '../../utilities/GlobalVariablesStyles';
 import { device } from "../../utilities/GlobalVariablesStyles";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {  IconSize } from "./Layout.style";
 import Image from "next/image";
 
 export const SideBarBox=styled.div` 
- //position: fixed;
  width: 100%;
  height: 100%;
- display: flex;
+ display:flex;
  flex-direction: column;
  justify-content: start;
- background-color: ${colors.white};
+ background-color: ${colors.primaryDark};
  z-index: 1;
  right:0;
  top:5rem;
  border: 1px solid ${colors.icons};
+ border-radius: 5px;
+ overflow:hidden;
+ 
 `
 
 export const CategoryList=styled.div` 
  display: flex;
  flex-direction: column;
- background-color: ${colors.white};
+ background-color: ${colors.primaryDark};//${colors.white}
  width: 100%;
  align-items: center;
  font-family: 'Merriweather';
  height: 100%;
+ overflow:scroll;
 
 `
 export const CategoryItem=styled.div` 
@@ -36,28 +37,28 @@ transition: all .3s;
 display: flex;
 justify-content: center;
 align-items: center;
-color:	#666666;
-&:hover{
-    border-bottom: .2px solid ${colors.lightGray};
-    border-top: .2px solid ${colors.lightGray};
-    color: ${colors.red};
-    background-color: #eeeeee;
+color:${(props)=>props.active?`${colors.red}`:`${colors.white}`};//	#666666
+
+    border-bottom: ${(props)=>props.active?`.2px solid ${colors.lightGray}`:''};
+    border-top: ${(props)=>props.active?`.2px solid ${colors.lightGray}`:''};
+    //color: ${colors.red};
+    background-color:${(props)=>props.active?`${colors.primaryLight}`:`${colors.primaryDark}`};//#eeeeee
     cursor: pointer;
-}
- /*@media ${device.mobileS}{
-    height: 1.5rem;
+
+
+flex:1;
+@media ${device.mobileS}{
+    min-height: 1.5rem;
 }
 @media ${device.mobileM}{
-    height: 1.5rem;
+    min-height: 1.8rem;
 }
 @media ${device.tablet}{
-    height: 2.5rem;
+    min-height: 2rem;
 }
 @media ${device.laptop}{
-   // height: 2.5rem;
-   flex:1;
-}*/
-flex:1;
+    min-height: 3rem;
+}
 `
 export const CategoryName=styled.span` 
 
@@ -70,7 +71,7 @@ export const CategoryName=styled.span`
     margin-right: 2px;
 }
 @media ${device.tablet}{
-    font-size:.9rem;
+    font-size:.8rem;
     margin-right: 5px;
 }
 @media ${device.laptop}{

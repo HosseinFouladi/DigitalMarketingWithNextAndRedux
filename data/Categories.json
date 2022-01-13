@@ -2,41 +2,41 @@
         {
             "categoryId":1,
             "categoryName":"خودرو",
-            "icon":"Car.ico"
+            "icon":"/../public/images/Car.ico"
         },
         {
             "categoryId":2,
             "categoryName":"لوازم خانگی",
-            "icon":"Dishwasher.ico"
+            "icon":"/../public/images/Dishwasher.ico"
         },
         {
             "categoryId":3,
             "categoryName":"گوشی همراه",
-            "icon":"Touchscreen_Smartphone.ico"
+            "icon":"/../public/images/Touchscreen_Smartphone.ico"
         },
         {
             "categoryId":4,
             "categoryName":"لباس مردانه",
-            "icon":"Shirt.ico"
+            "icon":"/../public/images/Shirt.ico"
         },
         {
             "categoryId":5,
             "categoryName":"نوشت افزار",
-            "icon":"Scalpel.ico"
+            "icon":"/../public/images/Scalpel.ico"
         },
         {
             "categoryId":6,
             "categoryName":"لپتاپ",
-            "icon":"Laptop.ico"
+            "icon":"/../public/images/Laptop.ico"
         },
         {
             "categoryId":7,
             "categoryName":"کفش",
-            "icon":"Boots.ico"
+            "icon":"/../public/images/Boots.ico"
         },
         {
             "categoryId":8,
             "categoryName":"ابزارآلات",
-            "icon":"Maintenance.ico"
+            "icon":"/../public/images/Maintenance.ico"
         }
 ]

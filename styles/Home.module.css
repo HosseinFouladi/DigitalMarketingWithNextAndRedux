@@ -10,3 +10,28 @@
   display: flex;
   color:#eeeeee;
 }
+.stripe{
+  background-color: green;
+  color:white;
+  border-radius: 10px;
+}
+
+.notification {
+  min-width: 225px !important;
+  position: absolute!important;
+  pointer-events: all!important;
+}
+.dropBtn{
+  @media (min-width:200px) {
+    font-size: 1rem !important;
+  }
+  @media (min-width:375px) {
+    font-size: 1rem !important;
+  }
+  @media (min-width:768px) {
+    font-size: 1.2rem !important;
+  }
+  @media (min-width:1024px) {
+    font-size: 20rem !important;
+  }
+}

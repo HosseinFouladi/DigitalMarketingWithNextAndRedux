@@ -1,43 +1,35 @@
-import Image from "next/image";
+
 import { useDispatch, useSelector } from "react-redux";
 import Register from "../components/register/register"
-import { setCurrentUser, setImageUrl } from "../redux/actions/UserActions";
-import { selectCurrentUser, selectImageUrl, selectUserImage } from "../redux/selectors/UserSelector";
-import axios from "axios";
+import { startUploadingInfo, successUploadingInfo } from "../redux/actions/UserActions";
+import { selectCurrentUser,  selectUserImage } from "../redux/selectors/UserSelector";;
 import { useRouter } from "next/router";
+import Notif from "../components/notification/Notification";
+import { useEffect } from "react";
+
 
 
 const Signup=()=>{
 
     const image=useSelector(selectUserImage);
     const router = useRouter();
+    const user=useSelector(selectCurrentUser);
     const dispatch=useDispatch();
+
+
     const submitForm=(data)=>{
-
-        const upload=async()=>{
-            const data1 = new FormData()
-            data1.append("file", image)
-            data1.append("upload_preset", "my-marketing-app")
-            data1.append("cloud_name","my-cloudinary-dashboard");
-            try{
-                const uploadedImage= await axios.post(" https://api.Cloudinary.com/v1_1/my-cloudinary-dashboard/image/upload",data1);
-                dispatch(setImageUrl(uploadedImage.data.url));
-            }catch(err){
-                console.log(err);
-            }
+        dispatch(successUploadingInfo({...data}))
+        try{
+            dispatch(startUploadingInfo({image}))
+            setTimeout(()=>{
+                Notif('success','با موفقیت ثبت نام کردید','ثبت نام موفق')
+                router.push('/');
+            },1000)
+        }catch(err){
+            Notif('danger',err,'ناموفق')
         }
 
-
-        const signup=async()=>{
-
-            upload();
-            dispatch(setCurrentUser(data));
-            router.push('/');
-
-        }
-        signup();
-
-        }
+    }
 
     return(
         <div>

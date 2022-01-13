@@ -8,15 +8,10 @@ module.exports = {
     'www.brandkade.com','salset.com','crepin.ir','cdnfa.com','rosecomputer.ir','aydalo.com','maralnahal.ir','static2.rokna.net',
     '',''],
   },
-  async rewrites() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: 'http://restapi.adequateshop.com/:path*',
-      },
-    ]
-  },
     
+  env:{
+      BASE_URL:'http://restapi.adequateshop.com',
+  }
 }
 
 

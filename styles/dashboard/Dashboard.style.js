@@ -11,19 +11,10 @@ export const DashboardContainer=styled.div`
  overflow: scroll;
  background-color: ${colors.lightGray};
  z-index: 0;
-`
-export const SidebarContainer=styled.section` 
- flex:1;
- height: 100%;
- overflow: hidden;
- display: flex;
-// position: relative;
-${CategoriesLink}:hover +&& {
-    display: none;
- }
+
 `
 export const ProductContainer=styled.section` 
- flex: 5;
+ width: 100%;
  height: 100%;
  display: flex;
  overflow: scroll;
@@ -33,9 +24,14 @@ export const ProductContainer=styled.section`
  border: 1px solid ${colors.icons};
 `
 export const ProductPreviewContainer=styled.section` 
- flex:5;
+
+ width: 100%;
  height: 100%;
  display: flex;
+ flex-wrap: wrap;
  border: 1px solid ${colors.icons};
-// background-color: ${colors.white};
+ overflow: scroll;
+ background-color: ${colors.white};
+ justify-content: center;
+ direction: rtl;
 `

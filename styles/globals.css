@@ -9,3 +9,72 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.notification__item--success .notification__timer {
+  background-color: #00CC66;
+ }
+
+ .notification{
+   transition: height 600ms linear 0ms!important;
+    overflow: hidden!important;
+ }
+
+ @media (min-width:200px) {
+  .notification{
+    
+    width: 200px!important;
+   }
+   .notification__title{
+    font-size: .5rem!important;
+  }
+  .notification__message{
+    font-size: .4rem!important;
+  }
+
+}
+@media (min-width:375px) {
+  .notification{
+    
+    width:330px!important;
+    
+   }
+   .notification__title{
+    font-size: .8rem!important;
+  }
+  .notification__message{
+    font-size: .6rem!important;
+  }
+
+}
+@media (min-width:768px) {
+  .notification{
+    
+    width: 355px!important;
+    
+   }
+   .notification__title{
+    font-size: 1rem!important;
+  }
+  .notification__message{
+    font-size: .8rem!important;
+  }
+
+}
+@media (min-width:1024px) {
+   .notification{
+    
+    width: 400px!important;
+    
+   }
+   .notification__title{
+     font-size: 1.2rem!important;
+   }
+   .notification__message{
+    font-size: 1rem!important;
+  }
+}
+
+.notification__item--success{
+  background-color: #009966!important;
+  border-left: 8px solid #009966!important;
+}

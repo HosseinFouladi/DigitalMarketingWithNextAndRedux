@@ -1,5 +1,5 @@
 import styled,{css, keyframes} from "styled-components";
-import { device,colors } from "../../utilities/GlobalVariablesStyles";
+import { device,colors, darkGray } from "../../utilities/GlobalVariablesStyles";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconSize } from "../layout/Layout.style";
 
@@ -31,8 +31,10 @@ export const CartContainer=styled.div`
  border: 1px solid ${colors.icons};
  display: flex;
  flex-direction: column;
- font-family: 'Merriweather', serif;
+ font-family: Arial, Helvetica, sans-serif;
  z-index: 0;
+ border-radius: 5px;
+ overflow:hidden;
 
 
  @media ${device.mobileS}{
@@ -87,7 +89,7 @@ export const ProductTitle=styled.h6`
  text-align: right;
  flex: 1;
  ${Size};
- color:${colors.lightBlue};
+ color:${colors.black};
 `
 export const StockBox=styled.div` 
  flex: 1;
@@ -126,6 +128,7 @@ export const Price=styled.strong`
 export const Currency=styled.span` 
  margin-right: 5px;
  ${Size};
+ color:${darkGray};
 `
 export const CarouselCaptionText=styled.span`
     transform: translateY(-3rem);
@@ -155,10 +158,11 @@ export const LookButton=styled.button`
     padding: .1rem 1.3rem;
     font-size: 1rem;
 }
-background-color: ${colors.primaryLight};
+background-color: ${colors.primaryDark};
 color:${colors.white};
 border-radius: 10px;
 transition:all .2s;
+border: none;
 
 &:hover{
     transform:translateY(-5px);

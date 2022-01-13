@@ -1,39 +1,30 @@
 
 import { useRouter } from 'next/router';
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Notif from '../components/notification/Notification';
 import Register from '../components/register/register';
-import { selectCurrentUser } from '../redux/selectors/UserSelector';
-import { errorHandler, postInfo } from '../utilities/ApiHelper';
-import { API_URL } from '../utilities/Constants';
-
+import { selectCurrentUser } from '../redux/selectors/UserSelector';;
+import categories from '../data/Categories.json';
+import products from '../data/Products.json';
+import { insertAllCategories, insertAllProducts } from "../redux/actions/ProductActions";
 
 export default function Home() {
-
-
   const currentUser=useSelector(selectCurrentUser);
-  const [errorMessage,setErrorMessage]=useState('');
   const router=useRouter();
-  const submitForm = (data) => {
-    console.log(data);
+  const dispatch=useDispatch();
 
-    const login= async()=>{
-    const{username,password}=data;
-    
-    try{
-      const infos=await postInfo(`${API_URL.TEST}?userName=${username}&password=${password}`);
-      localStorage.setItem('user',JSON.stringify(infos));
-      localStorage.setItem('token',infos.token);
-    }catch(err){
-        console.log(err)
-    }
-    }
+  useEffect(()=>{
+    dispatch(insertAllCategories(categories));
+    dispatch(insertAllProducts(products));
+  },[])
+
+  const submitForm = (data) => {
  
     const loginWithReduxState=()=>{
-
       const{username,password}=currentUser;
-      if(username!==data.username&&password!==data.password){
+      if(username===data.username&&password===data.password){
+          sessionStorage.setItem('user',JSON.stringify(currentUser));
           router.push('/product/');
       }else{
         Notif("danger","username or password is incorrect!try again");
@@ -50,3 +41,8 @@ export default function Home() {
     </div>
   )
 }
+/*export const getStaticProps = wrapper.getStaticProps((store) =>
+      async () => {
+        await store.dispatch(insertAllCategories(categories));
+        await store.dispatch(insertAllProducts(products));
+      });*/

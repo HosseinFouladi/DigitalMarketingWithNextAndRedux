@@ -1,13 +1,26 @@
 import Dashboard from "../../components/dashboard/Dashboard";
 import Layout from "../../components/layout/Layout";
-import { wrapper } from "../../redux/redux-setting/store";
-import categories from '../../data/Categories.json';
-import products from '../../data/Products.json';
-import { insertAllCategories, insertAllProducts } from "../../redux/actions/ProductActions";
-
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
+import { selectCurrentUser } from "../../redux/selectors/UserSelector";
 const index=()=>{
+
+    const router=useRouter();
+    const user=useSelector(selectCurrentUser);
+    
+    useEffect(()=>{
+        if(!user.name){
+            router.replace('/');
+        }
+  
+    },[])
+
     return(
-        <Layout children={<Dashboard type='product'/>}></Layout>
+       <div>
+           {user.name? <Layout children={<Dashboard type='product'/>}></Layout>:''}
+       </div>
     )
 }
 export default index;
@@ -15,9 +28,9 @@ export default index;
 /*export const getServerSideProps=wrapper.getServerSideProps(async({store})=>{
     await store.dispatch(insertAllCategories(categories));
 })*/
-export const getStaticProps = wrapper.getStaticProps((store) =>
+/*export const getStaticProps = wrapper.getStaticProps((store) =>
       async () => {
         await store.dispatch(insertAllCategories(categories));
         await store.dispatch(insertAllProducts(products));
-      });
+      });*/
 

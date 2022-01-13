@@ -1,16 +1,14 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Grow from '@material-ui/core/Grow';
 import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
-import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
 import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
-import { selectCurrentUser } from '../../redux/selectors/UserSelector';
 import { logout } from '../../redux/actions/UserActions';
+import { DropButton, Menuitem } from '../../styles/material-ui/DropDown.style';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,7 +39,9 @@ export default function MenuListComposition({name}) {
 
     setOpen(false);
     dispatch(logout());
+    localStorage.removeItem('user');
     router.push('/');
+   
   };
 
   function handleListKeyDown(event) {
@@ -65,15 +65,16 @@ export default function MenuListComposition({name}) {
     <div className={classes.root}>
  
       <div>
-        <Button
+        <DropButton
           ref={anchorRef}
           aria-controls={open ? 'menu-list-grow' : undefined}
           aria-haspopup="true"
           onClick={handleToggle}
+          
       
         >
-          {name}
-        </Button>
+         {name}
+        </DropButton>
         <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (
             <Grow
@@ -83,7 +84,7 @@ export default function MenuListComposition({name}) {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <MenuItem onClick={handleClose}>Logout</MenuItem>
+                    <Menuitem onClick={handleClose}>خروج از حساب</Menuitem>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

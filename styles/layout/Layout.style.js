@@ -2,7 +2,6 @@ import styled,{css} from "styled-components";
 import { colors } from "../../utilities/GlobalVariablesStyles";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { device } from "../../utilities/GlobalVariablesStyles";
-import BasicDateTimePicker from "../../components/material-ui/DataTimePicker";
 import Image from "next/image";
 
 
@@ -13,6 +12,8 @@ export const Container=styled.div`
  height: 100vh;
  background-color: ${colors.lightGray};
  font-family: sans-serif;
+ position: relative;
+ direction: rtl;
 `
 const SetBorder=css` 
  transition: all .2s;
@@ -22,10 +23,13 @@ const SetBorder=css`
  }
 `
 export const HeaderSection=styled.section` 
- flex: 1;
+ //flex: 1;
+ direction: ltr;
+ position: fixed;
+ z-index:20;
  background-color: ${colors.white};
  border-bottom: 1px solid gray;
- width: 100%;
+ width: 100vw;
  display: flex;
  justify-content: space-between;
  align-items: center;
@@ -33,11 +37,104 @@ export const HeaderSection=styled.section`
  border-radius: 3px;
  padding-top: 5px;
  padding-bottom: 5px;
+ padding-right: 5px;
+
+ @media ${device.mobileS}{
+    height: 1.5rem;
+}
+@media ${device.mobileM}{
+    height: 2rem;
+}
+@media ${device.tablet}{
+    height: 3rem;
+}
+@media ${device.laptop}{
+    height: 3.5rem;
+}
+`
+export const CategoriesLink=styled.div` 
+ flex:1 ;
+ display:flex;
+ //justify-content: center;
+ flex-direction: column;
+ justify-content: start;
+ align-items: end;
+ ${SetBorder};
+ cursor: pointer;
+`
+export const CategoryBox=styled.div` 
+ width: 100%;
+ height: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+`
+
+export const AdminJob=styled.span` 
+ 
+`
+export const SidebarContainer=styled.section` 
+ height: 99vh;
+ position: fixed;
+ overflow: hidden;
+ display: flex;
+ float: right;
+ direction: ltr;
+ z-index:20;
+
+ @media ${device.mobileS}{
+    padding-top: 1.2rem;
+    width: 4rem;
+    margin-right: -.4rem;
+    visibility: ${(props)=>props.isOpen?'visible':'hidden'};
+}
+@media ${device.mobileM}{
+    padding-top: 1.65rem;
+    width: 6rem;
+    margin-right: -.6rem;
+    visibility: hidden;
+ ${CategoriesLink}:hover & {
+     visibility: visible;
+ }
+
+}
+@media ${device.tablet}{
+    visibility: hidden;
+ ${CategoriesLink}:hover & {
+     visibility: visible;
+ }
+    padding-top: 2.7rem;
+    width: 7rem;
+    margin-right: -.8rem;
+}
+@media ${device.laptop}{
+    visibility: hidden;
+ ${CategoriesLink}:hover & {
+     visibility: visible;
+ }
+    padding-top: 3.2rem;
+    width: 9rem;
+    margin-right: -1rem;
+}
+// position: relative;
 `
 export const ContentSection=styled.section` 
  flex: 10;
  width: 100%;
-
+ direction: ltr;
+ @media ${device.mobileS}{
+    padding-top: 1.5rem;
+}
+@media ${device.mobileM}{
+    padding-top: 2rem;
+}
+@media ${device.tablet}{
+    padding-top: 3rem;
+}
+@media ${device.laptop}{
+    padding-top: 3.5rem;
+}
+overflow-y: scroll;
 
 `
 export const IconSize=css` 
@@ -54,34 +151,36 @@ export const IconSize=css`
     font-size: 1.1rem;
 }
 `
-export const CategoriesLink=styled.div` 
- flex:1 ;
- display:flex;
- justify-content: center;
- align-items: center;
- ${SetBorder};
-`
+
 export const FontAwesome=styled(FontAwesomeIcon)` 
 
+ &:hover{
+     background-color: ${(props)=>props.isSort?`#ced4da`:`transport`};
+ }
+ cursor: pointer;
  color:${colors.icons};
  ${IconSize};
 `
 export const LinkText=styled.span` 
-margin-right: 5px;
+
 cursor: pointer;
  color:${colors.black};
  font-weight: 550;
  @media ${device.mobileS}{
-    font-size: .5rem;
+    font-size: .3rem;
+    margin-right: ${(props)=>props.margin!='no'?'1px':''};
 }
 @media ${device.mobileM}{
     font-size: .6rem;
+    margin-right: ${(props)=>props.margin!='no'?'5px':''};
 }
 @media ${device.tablet}{
     font-size:.7rem;
+    margin-right: ${(props)=>props.margin!='no'?'5px':''};
 }
 @media ${device.laptop}{
     font-size: .9rem;
+    margin-right: ${(props)=>props.margin!='no'?'5px':''};
 }
 `
 export const SearchInput=styled.input` 
@@ -153,21 +252,9 @@ export const SearchIcon=styled(FontAwesomeIcon)`
 `
 export const TimeContainer=styled.div` 
 
- display: flex;
  justify-content: center;
-
- @media ${device.mobileS}{
-    width: 0;
-}
-@media ${device.mobileM}{
-   width: 0;
-}
- @media ${device.tablet}{
-    flex:1;
-}
-@media ${device.laptop}{
-   flex:1;
-}
+ flex:1;
+ display: ${(props)=>props.isAdmin==true?'flex':'none'};
 `
 
 export const ProfileContainer=styled.div` 
@@ -176,13 +263,16 @@ export const ProfileContainer=styled.div`
  align-items: center;
  flex: 1;
  ${SetBorder};
+ 
+
+
 `
 export const Username=styled.strong` 
   @media ${device.mobileS}{
-    font-size:.6rem ;
+    font-size:.4rem ;
 }
 @media ${device.mobileM}{
-   font-size:.8rem;
+   font-size:1rem;
 }
  @media ${device.tablet}{
     font-size: 1rem;

@@ -12,7 +12,7 @@ import 'react-notifications-component/dist/theme.css'
                 animationIn: ["animate__animated", "animate__fadeIn"],
                 animationOut: ["animate__animated", "animate__fadeOut"],
                 dismiss: {
-                  duration: 4000,
+                  duration: 3000,
                   onScreen: true
                 }
               })

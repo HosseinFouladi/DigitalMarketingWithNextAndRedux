@@ -27,5 +27,14 @@ export const device = {
       lightBlue:'#5F9EA0',
       lightGray:'#DCDCDC',
       icons:'#AAAAAA',
+      like:'#CCCCCC',
+      box:['#999999','#CC0033','#888888'],
+      blue:'#3366FF'
 
   }
+
+  export const PrimayColor='#009966';
+  export const secondaryPurple='#800080'
+  export const secondaryOrange='#A52A2A'
+  export const accentYellow='#DAA520';
+  export const darkGray='	#555555'

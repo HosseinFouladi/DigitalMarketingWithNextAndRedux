@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { colors } from '../../utilities/GlobalVariablesStyles';
+import { colors, darkGray } from '../../utilities/GlobalVariablesStyles';
 import { device } from '../../utilities/GlobalVariablesStyles';
-import Link from 'next/link';
+
 
 export const Container=styled.div` 
  //position: relative;
@@ -42,7 +42,7 @@ export const IconContainer=styled.div`
  align-items: center;
 `
 export const SiteName=styled.strong` 
- color:${colors.lightBlue};
+ color:${colors.black};//lightBlue
  @media ${device.mobileS}{
      font-size: .8rem;
  }
@@ -73,14 +73,13 @@ export const Icon=styled.div`
     width: 2.5rem;
      height: 2.5rem;
  }
-
 `
 export const Title=styled.h3` 
- color:${colors.primaryLight};
+ color:${darkGray};//primaryLight
  flex:1;
- background-image: linear-gradient(to right,${colors.primaryLight},${colors.primaryDark});
+ //background-image: linear-gradient(to right,${colors.primaryLight},${colors.primaryDark});
  -webkit-background-clip: text;
- color: transparent;
+ //color: transparent;
 
  @media ${device.mobileS}{
    font-size: .7rem;
@@ -108,10 +107,10 @@ export const Address=styled.h4`
  color:${colors.gray};
  
  @media ${device.mobileS}{
-   font-size: .6rem;
+   font-size: .4rem;
  } 
   @media ${device.mobileM}{
-    font-size: .7rem;
+    font-size: .6rem;
  }
  @media ${device.tablet}{
     font-size: .8rem;
@@ -199,6 +198,5 @@ export const BackgroundImage=styled.div`
  width: 100%;
  height: 100%;
  background-position: center;
- background-color: yellow;
  background-size: cover;
 `

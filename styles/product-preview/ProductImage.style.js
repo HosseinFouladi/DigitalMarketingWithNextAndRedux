@@ -1,19 +1,54 @@
-import styled from "styled-components";
+import styled ,{keyframes} from "styled-components";
 import { colors } from "../../utilities/GlobalVariablesStyles";
 import { device } from "../../utilities/GlobalVariablesStyles";
 
+const animate = keyframes`
+  0%{
+    transform:  translateY(-15rem);
+
+  }
+
+  50%{
+      transform: translateY(5rem) ;
+  }
+
+  80%{
+    transform:  translateY(-2rem); 
+  }
+  100% {
+    transform:   translateY(0);
+  }
+`;
+
 export const ImageBox=styled.section` 
- flex: 1;
+animation: ${animate} 2s linear;
+@media ${device.mobileS}{
+    width: 100%;
+    height: 60%;
+}
+@media ${device.mobileM}{
+    width: 100%;
+    height: 60%;
+}
+@media ${device.tablet}{
+    width: 33%;
+    height: 100%;
+}
+@media ${device.laptop}{
+   width: 33%;
+   height: 100%;
+}
  background-color: ${colors.white};
- height: 100%;
  display: flex;
  flex-direction: column;
+ direction: ltr;
 `
 
 export const ImageContainer=styled.div` 
  position: relative;
  flex: 7;
  width: 100%;
+
 
 `
 export const OtherImagesBox=styled.div` 
@@ -25,7 +60,6 @@ export const OtherImagesBox=styled.div`
 `
 export const OtherImageContainer=styled.div` 
  position:relative;
- //border-radius: 20px;
  border: 1px solid ${colors.lightGray};
  margin-right: 1rem;
  cursor: pointer;

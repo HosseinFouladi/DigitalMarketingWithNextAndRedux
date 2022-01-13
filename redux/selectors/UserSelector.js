@@ -15,7 +15,7 @@ export const selectImageUrl=createSelector(
     [selectCurrentUser],
     currentUser=>currentUser.imageUrl
 )
-export const selectName=createSelector(
-    [selectCurrentUser],
-    currentUser=>currentUser.name
+export const selectUserLoading=createSelector(
+    [user],
+    user=>user.userLoading
 )

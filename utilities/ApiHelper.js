@@ -36,3 +36,16 @@ export const errorHandler=(func)=>{
      
     })
 }
+
+export const uploadPictureToCloudinary=async(image)=>{
+    const data1 = new FormData()
+    data1.append("file", image)
+    data1.append("upload_preset", "my-marketing-app")
+    data1.append("cloud_name","my-cloudinary-dashboard");
+    try{
+        const uploadedImage= await axios.post(" https://api.Cloudinary.com/v1_1/my-cloudinary-dashboard/image/upload",data1);
+        return uploadedImage;
+    }catch(err){
+        console.log(err);
+    }
+}
