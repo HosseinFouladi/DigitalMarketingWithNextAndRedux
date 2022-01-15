@@ -22,7 +22,7 @@ const Product=()=>{
      },[])
     useEffect(()=>{
         dispatch(findproduct(id));
-    },[])
+    },[prod])
 
 
 
