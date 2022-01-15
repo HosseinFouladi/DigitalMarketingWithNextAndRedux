@@ -12,12 +12,10 @@ const rotate = keyframes`
   }
 
   50%{
-      transform: translateX(5rem) rotateY(180deg); 
+      transform: translateX(5rem) 
   }
 
-  80%{
-    transform:  rotateY(180deg); 
-  }
+
   100% {
     transform:   translateX(0);
   }
@@ -26,12 +24,12 @@ const rotate = keyframes`
 export const CartContainer=styled.div` 
  margin-right: 2rem;
  background-color: ${colors.white};
- animation: ${rotate} 3s linear ;
+ animation: ${rotate} 1.5s linear ;
  margin-bottom: 2rem;
  border: 1px solid ${colors.icons};
  display: flex;
  flex-direction: column;
- font-family: Arial, Helvetica, sans-serif;
+ font-family: "Yekan"!important;
  z-index: 0;
  border-radius: 5px;
  overflow:hidden;

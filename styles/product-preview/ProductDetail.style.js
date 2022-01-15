@@ -10,7 +10,7 @@ export const Details=styled.section`
  text-align:right;
  background-color: ${colors.white};
  padding: 0 1rem;
- font-family: Arial, Helvetica, sans-serif;
+ font-family: "Yekan"!important;
  @media ${device.mobileS}{
     width: 100%;
     height: 70%;

@@ -11,7 +11,7 @@ export const Container=styled.div`
  width: 100vw;
  height: 100vh;
  background-color: ${colors.lightGray};
- font-family: sans-serif;
+ font-family: "Yekan"!important;
  position: relative;
  direction: rtl;
 `
@@ -32,34 +32,38 @@ export const HeaderSection=styled.section`
  width: 100vw;
  display: flex;
  justify-content: space-between;
- align-items: center;
+ 
  box-shadow: 0 0 5px 0 gray;
  border-radius: 3px;
  padding-top: 5px;
  padding-bottom: 5px;
- padding-right: 5px;
-
+ padding-right: 2px;
+ align-items: center;
  @media ${device.mobileS}{
-    height: 1.5rem;
+    height: 2rem;
 }
 @media ${device.mobileM}{
     height: 2rem;
+    
 }
 @media ${device.tablet}{
     height: 3rem;
+    
 }
 @media ${device.laptop}{
     height: 3.5rem;
+    
 }
 `
 export const CategoriesLink=styled.div` 
- flex:1 ;
+ //flex:1;
+ width: 22%;
  display:flex;
  //justify-content: center;
  flex-direction: column;
  justify-content: start;
  align-items: end;
- ${SetBorder};
+ ;
  cursor: pointer;
 `
 export const CategoryBox=styled.div` 
@@ -83,7 +87,7 @@ export const SidebarContainer=styled.section`
  z-index:20;
 
  @media ${device.mobileS}{
-    padding-top: 1.2rem;
+    padding-top: 1.35rem;
     width: 4rem;
     margin-right: -.4rem;
     visibility: ${(props)=>props.isOpen?'visible':'hidden'};
@@ -123,7 +127,7 @@ export const ContentSection=styled.section`
  width: 100%;
  direction: ltr;
  @media ${device.mobileS}{
-    padding-top: 1.5rem;
+    padding-top: 2rem;
 }
 @media ${device.mobileM}{
     padding-top: 2rem;
@@ -139,7 +143,7 @@ overflow-y: scroll;
 `
 export const IconSize=css` 
   @media ${device.mobileS}{
-    font-size: .3rem;
+    font-size: .5rem;
 }
 @media ${device.mobileM}{
     font-size: .5rem;
@@ -167,7 +171,7 @@ cursor: pointer;
  color:${colors.black};
  font-weight: 550;
  @media ${device.mobileS}{
-    font-size: .3rem;
+    font-size: .5rem;
     margin-right: ${(props)=>props.margin!='no'?'1px':''};
 }
 @media ${device.mobileM}{
@@ -184,7 +188,7 @@ cursor: pointer;
 }
 `
 export const SearchInput=styled.input` 
- width: 100%;
+ width: 90%;
  text-align: right;
  background-color: #DDDDDD;
  border: none;
@@ -197,7 +201,7 @@ export const SearchInput=styled.input`
  border-radius: .5rem;
  @media ${device.mobileS}{
     font-size: .5rem;
-    padding: .2rem 2rem;
+    padding: .1rem 2rem;
 }
 @media ${device.mobileM}{
     font-size: .6rem;
@@ -218,19 +222,8 @@ export const SearchBox=styled.div`
  display: flex;
  justify-content: center;
  align-items: center;
- @media ${device.mobileS}{
-     flex:1;
-}
-@media ${device.mobileM}{
-   flex:1;
-}
-@media ${device.tablet}{
-    flex: 1;
-}
-@media ${device.laptop}{
-   
-    flex: 1;
-}
+ //flex:1;
+ width:22%;
 `
 export const SearchIcon=styled(FontAwesomeIcon)` 
 
@@ -253,23 +246,26 @@ export const SearchIcon=styled(FontAwesomeIcon)`
 export const TimeContainer=styled.div` 
 
  justify-content: center;
- flex:1;
+ //flex:1;
+ width:20%;
  display: ${(props)=>props.isAdmin==true?'flex':'none'};
+ margin-left: 3px;
 `
 
 export const ProfileContainer=styled.div` 
  display: flex;
  justify-content: center;
  align-items: center;
- flex: 1;
- ${SetBorder};
+ //flex:1;
+ width:23;
+ ;
  
 
 
 `
 export const Username=styled.strong` 
   @media ${device.mobileS}{
-    font-size:.4rem ;
+    font-size:.6rem ;
 }
 @media ${device.mobileM}{
    font-size:1rem;
@@ -286,8 +282,8 @@ export const ProfilePicture=styled.div`
 
  position: relative;
   @media ${device.mobileS}{
-    width: .8rem;
-   height: .8rem
+    width: 1rem;
+   height: 1rem
 }
 @media ${device.mobileM}{
     width: 1rem;
@@ -307,7 +303,7 @@ export const UserImage=styled(Image)`
 `
 export const CartIcon=styled(FontAwesomeIcon)` 
   @media ${device.mobileS}{
-    font-size:.8rem ;
+    font-size:1rem ;
 }
 @media ${device.mobileM}{
    font-size:1rem;
@@ -321,8 +317,8 @@ export const CartIcon=styled(FontAwesomeIcon)`
  color:${colors.primaryDark};
 `
 export const CartBox=styled.div` 
- flex:1; 
- ${SetBorder};
+ //flex:1; 
+ width:13%;
  display: flex;
  justify-content: center;
  align-items: center;

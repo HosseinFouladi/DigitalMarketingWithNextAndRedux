@@ -2,41 +2,41 @@
         {
             "categoryId":1,
             "categoryName":"خودرو",
-            "icon":"/../public/images/Car.ico"
+            "icon":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHawSkgKOxovvUElfMmcCw9RoOLZm2sNYw9g&usqp=CAU"
         },
         {
             "categoryId":2,
             "categoryName":"لوازم خانگی",
-            "icon":"/../public/images/Dishwasher.ico"
+            "icon":"https://media.khabaronline.ir/d/2021/05/17/3/5563676.jpg"
         },
         {
             "categoryId":3,
             "categoryName":"گوشی همراه",
-            "icon":"/../public/images/Touchscreen_Smartphone.ico"
+            "icon":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4BaUlDZQEqgjktaULZBlkq2V_DSF33JSDRw&usqp=CAU"
         },
         {
             "categoryId":4,
             "categoryName":"لباس مردانه",
-            "icon":"/../public/images/Shirt.ico"
+            "icon":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfobNAqa94drICZ0ujMiU2CtzaFw-ylKQw5Q&usqp=CAU"
         },
         {
             "categoryId":5,
             "categoryName":"نوشت افزار",
-            "icon":"/../public/images/Scalpel.ico"
+            "icon":"https://dkstatics-public.digikala.com/digikala-products/5368258.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_80"
         },
         {
             "categoryId":6,
             "categoryName":"لپتاپ",
-            "icon":"/../public/images/Laptop.ico"
+            "icon":"https://tejaratnews.com/wp-content/uploads/2020/09/akrales_170502_1637_0531.0.0.jpg"
         },
         {
             "categoryId":7,
             "categoryName":"کفش",
-            "icon":"/../public/images/Boots.ico"
+            "icon":"https://media.sarpoosh.com/images/article/picture/sport-shoe-3218.png"
         },
         {
             "categoryId":8,
             "categoryName":"ابزارآلات",
-            "icon":"/../public/images/Maintenance.ico"
+            "icon":"https://dkstatics-public.digikala.com/digikala-products/467956.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_80"
         }
 ]

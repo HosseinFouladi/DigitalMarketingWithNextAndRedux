@@ -78,3 +78,18 @@ a {
   background-color: #009966!important;
   border-left: 8px solid #009966!important;
 }
+
+
+body {
+  font-family: "Yekan", sans-serif !important;
+}
+
+
+@font-face {
+  font-family: "Yekan";
+  src: url("/fonts/Yekan.ttf") format('truetype');
+  font-weight: normal;
+	font-style: normal;
+	text-rendering: optimizeLegibility;
+	font-display: auto;
+}

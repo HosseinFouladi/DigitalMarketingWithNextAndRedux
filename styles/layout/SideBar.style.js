@@ -25,7 +25,7 @@ export const CategoryList=styled.div`
  background-color: ${colors.primaryDark};//${colors.white}
  width: 100%;
  align-items: center;
- font-family: 'Merriweather';
+ font-family: "Yekan"!important;
  height: 100%;
  overflow:scroll;
 
@@ -81,13 +81,14 @@ export const CategoryName=styled.span`
 
 `
 export const ListIcons=styled.div` 
- width: 1rem;
- height:1rem;
+ overflow:hidden;
  color: #666666;
  position: relative;
+ border-radius: 50%;
+ margin-left: 2px;
  @media ${device.mobileS}{
-    width: .5rem;
-    height:.5rem;
+    width: .65rem;
+    height:.65rem;
 }
 @media ${device.mobileM}{
     width: .6rem;
@@ -101,6 +102,7 @@ export const ListIcons=styled.div`
     width: 1rem;
     height:1rem;
 }
+
 `
 export const ListImages=styled(Image)`
  color:red;

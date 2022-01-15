@@ -18,6 +18,9 @@ const AddCategoryForm=()=>{
     const [type,setType]=useState();
     const addLoading=useSelector(selectaddLoading);
     const editLoading=useSelector(selectEditLoading);
+    const [deleteView,setDeleteView]=useState(false);
+    const [editView,setEditView]=useState(false);
+    const [addView,setAddView]=useState(false);
 
     const handleImgCategory=useCallback((e)=>{
         setImage(e.target.files[0]);
@@ -32,6 +35,11 @@ const AddCategoryForm=()=>{
 
     const handleDelete=useCallback((e)=>{
 
+        if(!deleteView&&type!='delete'){
+            setType(e.target.name);
+            setDeleteView(true);
+            return;
+        }
         const id=watch('categoryId');
         try{
             dispatch(deleteCategory(id));
@@ -39,9 +47,15 @@ const AddCategoryForm=()=>{
         }catch(err){
             Notif('warning',err,'هشدار');
         }
+        setDeleteView(false)
     })
 
     const handleAdd=useCallback((e)=>{
+        if(!addView&&type!='add'){
+            setType(e.target.name);
+            setAddView(true);
+            return;
+        }
         const categoryName=watch('categoryName');
         const categoryId=watch('categoryId');
 
@@ -54,6 +68,7 @@ const AddCategoryForm=()=>{
             }
         }
         add();
+        setAddView(false);
     });
 
     const handleEdit=useCallback((e)=>{
@@ -61,7 +76,11 @@ const AddCategoryForm=()=>{
         const categoryId=watch('categoryId');
 
         const edit=async()=>{
-     
+            if(!editView&&type!='edit'){
+                setType(e.target.name);
+                setEditView(true);
+                return;
+            }
             try{
                dispatch(startEdditingCat({image,categoryName,categoryId}));
             }catch(err){
@@ -69,6 +88,7 @@ const AddCategoryForm=()=>{
             }
         }
         edit();
+        setEditView(false);
     });
     return(
         <Form type='category' onSubmit={handleSubmit(fetchCat)}>
@@ -86,7 +106,7 @@ const AddCategoryForm=()=>{
                 <FileInput type='file' id='avatarCat'  accept="image/*" required='true' onChange={handleImgCategory}/> 
             </UploadImageBox>}
             <ButtonBox>
-                <AddButton types={type} disabled={addLoading?true:false}loading={addLoading} name='add' onClick={handleAdd} onMouseEnter={handlType} >
+                <AddButton types={type}chooseColor='add' disabled={addLoading?true:false}loading={addLoading} name='add' onClick={handleAdd} onMouseEnter={handlType} >
                  <ButtonContent>
                  {!addLoading && <ButtonText>اضافه</ButtonText>}
                { addLoading && <Loader  viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
@@ -94,7 +114,7 @@ const AddCategoryForm=()=>{
                 </Loader>}
                  </ButtonContent>
                 </AddButton>
-                <AddButton types={type} disabled={editLoading?true:false} loading={editLoading} name='edit'onClick={handleEdit}onMouseEnter={handlType}  >
+                <AddButton types={type} chooseColor='edit' disabled={editLoading?true:false} loading={editLoading} name='edit'onClick={handleEdit}onMouseEnter={handlType}  >
                 <ButtonContent>
                  {!editLoading && <ButtonText>ویرایش</ButtonText>}
                {editLoading  && <Loader  viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">

@@ -33,7 +33,7 @@ export const PayButton=styled.button`
  color:${colors.white};
  border-radius: 5px;
  border: none;
- font-family: sans-serif;
+ font-family: "Yekan"!important;
  padding:2px 10px;
  @media ${device.mobileS}{
     font-size: .4rem;

@@ -15,7 +15,7 @@ const ProductPayment=()=>{
     const addToCart=()=>{
         dispatch(addProductToUser(product));
         dispatch(setCount());
-        Notif('success','محصول مورد نظر با موفقیت به سبد کالا اضافه شد!','اضافه به سبد خرید');
+        Notif('success','محصول مورد نظر با موفقیت به سبد کالا اضافه شد','اضافه به سبد خرید!');
     }
     return(
         <Payment>

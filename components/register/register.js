@@ -22,9 +22,6 @@ const Register=({type,submitForm})=>{
             <RegisterSection>
                 <IconContainer>
                     <SiteName>فروشگاه اینترنتی</SiteName>
-                    <Icon>
-                        <Image src={MarketingIcon}   alt="marketin-icon"/>
-                    </Icon>
                 </IconContainer>
                 <Title>{type==='login'?'ورود به سایت':'ثبت نام در سایت'}</Title>
                 <FormContainer>
@@ -35,12 +32,12 @@ const Register=({type,submitForm})=>{
                 </AddressContainer>
             </RegisterSection>
             <RightSection>
-                <Hello>سلام دوستان!</Hello>
+                <Hello>! سلام دوستان</Hello>
                 <Paragraph>
                     {type==='login'?'لطفا اطلاعات شخصی خودتون رو وارد کنید و با ما همراه باشید':'اگر قبلا ثبت نام کردید وارد صفحه لاگین شده و وارد سایت شوید'}
                 </Paragraph>
-                <Link href={type==='login'?'/signup':'/'}>
-                    <GuideButton>{type==='login'?'ثیت نام':'ورود'}</GuideButton>
+                <Link href={type==='login'?'/signup':'/login'}>
+                    <GuideButton>{type==='login'?'ثبت نام':'ورود'}</GuideButton>
                 </Link>
             </RightSection>
         </RegisterContianer>

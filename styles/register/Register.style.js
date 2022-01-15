@@ -10,7 +10,8 @@ export const Container=styled.div`
  height: 100vh;
  justify-content: center;
  align-items: center;
- font-family: 'Ubuntu';
+ font-family: "Yekan"!important;
+
 
 `
 export const RegisterContianer=styled.main` 
@@ -18,11 +19,26 @@ export const RegisterContianer=styled.main`
  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
- width: 80%;
- height: 75%;
+
  border-radius: 5%;
  z-index:5;
  display: flex;
+ @media ${device.mobileS}{
+    width: 80%;
+    height: 60%;
+ }
+ @media ${device.mobileM}{
+    width: 80%;
+ height: 75%;
+ }
+ @media ${device.tablet}{
+    width: 80%;
+ height: 75%;
+ }
+ @media ${device.laptop}{
+    width: 80%;
+ height: 75%;
+ }
 `
 export const RegisterSection=styled.section` 
  border-top-left-radius: 5%;
@@ -130,7 +146,7 @@ export const RightSection=styled.section`
  justify-content: center;
  align-items: center;
  color:${colors.white};
- padding: 0 1rem;
+ padding: 0 .7rem;
 `
 export const Hello=styled.h2` 
   @media ${device.mobileS}{

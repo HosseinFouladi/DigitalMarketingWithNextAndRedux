@@ -4,11 +4,24 @@ import { colors } from '../../utilities/GlobalVariablesStyles';
 import { device } from '../../utilities/GlobalVariablesStyles';
 
 export const Form=styled.form` 
- height: 100%;
+
  display:flex;
  flex-direction: column;
  align-items: center;
  justify-content: space-around;
+ 
+ @media ${device.mobileS}{
+    height:${(props)=>props.type=='login'?'70%;':'100%'}
+}
+@media ${device.mobileM}{
+    height:100%;
+}
+@media ${device.tablet}{
+    height:100%;
+}
+@media ${device.laptop}{
+    height:100%;
+}
 `;
 
 export const SelectRole=styled.select` 

@@ -19,6 +19,9 @@ const AddProductForm=()=>{
     const addLoadingProduct=useSelector(selectaddLoadingProduct);
     const editLoadingProduct=useSelector(selectEditLoadingProduct);
     const prod=useSelector(selectAllProducts);
+    const [deleteView,setDeleteView]=useState(false);
+    const [editView,setEditView]=useState(false);
+    const [addView,setAddView]=useState(false);
 
     const handleImgProduct=useCallback((e)=>{
         setImages(e.target.files);
@@ -34,15 +37,26 @@ const AddProductForm=()=>{
     const handleDeleteProduct=useCallback((e)=>{
 
         const id=watch('productId');
+        if(!deleteView&&type!='delete'){
+            setType(e.target.name);
+            setDeleteView(true);
+            return;
+        }
         try{
             dispatch(deleteproduct(id));
             Notif('success','با موفقیت حذف شد','انجام شد');
         }catch(err){
             Notif('warning',err,'هشدار');
         }
+        setDeleteView(false);
     })
 
     const handleAddProduct=useCallback((e)=>{
+        if(!addView&&type!='add'){
+            setType(e.target.name);
+            setAddView(true);
+            return;
+        }
         const productName=watch('productName');
         const categoryId=watch('categoryId');
         const productId=watch('productId');
@@ -58,9 +72,15 @@ const AddProductForm=()=>{
             }
         }
         add();
+        setAddView(false);
     });
 
     const handleEditProduct=useCallback((e)=>{
+        if(!editView&&type!='edit'){
+            setType(e.target.name);
+            setEditView(true);
+            return;
+        }
         const productName=watch('productName');
         const categoryId=watch('categoryId');
         const productId=watch('productId');
@@ -76,6 +96,7 @@ const AddProductForm=()=>{
             }
         }
         edit();
+        setEditView(false);
     });
     return(
         <Form type='product' onSubmit={handleSubmit(fetchData)}>
@@ -102,7 +123,7 @@ const AddProductForm=()=>{
                 <FileInput type='file' id='avatar' multiple  accept="image/*" required='true' onChange={handleImgProduct}/> 
             </UploadImageBox>}
             <ButtonBox>
-                <AddButton types={type} disabled={addLoadingProduct?true:false}loading={addLoadingProduct} name='add' onClick={handleAddProduct} onMouseEnter={handlTypeProduct} >
+                <AddButton types={type} chooseColor='add'disabled={addLoadingProduct?true:false}loading={addLoadingProduct} name='add' onClick={handleAddProduct}onMouseEnter={handlTypeProduct}  >
                  <ButtonContent>
                  {!addLoadingProduct && <ButtonText>اضافه</ButtonText>}
                { addLoadingProduct && <Loader  viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
@@ -110,7 +131,7 @@ const AddProductForm=()=>{
                 </Loader>}
                  </ButtonContent>
                 </AddButton>
-                <AddButton types={type} disabled={editLoadingProduct?true:false} loading={editLoadingProduct} name='edit'onClick={handleEditProduct}onMouseEnter={handlTypeProduct}  >
+                <AddButton types={type}chooseColor='edit' disabled={editLoadingProduct?true:false} loading={editLoadingProduct} name='edit'onClick={handleEditProduct}onMouseEnter={handlTypeProduct} >
                 <ButtonContent>
                  {!editLoadingProduct && <ButtonText>ویرایش</ButtonText>}
                {editLoadingProduct  && <Loader  viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">

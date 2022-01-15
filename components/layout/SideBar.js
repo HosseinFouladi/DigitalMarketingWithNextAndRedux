@@ -21,8 +21,8 @@ const SideBar=()=>{
     const showProductpPage=(e,id)=>{
         e.preventDefault();
         dispatch(setRelatedProducts(id));
-        if(window.location.href!='http://localhost:3000/product'){
-            router.push('/product');
+        if(window.location.href!='http://localhost:3000'){
+            router.push('/');
         }
         
     }

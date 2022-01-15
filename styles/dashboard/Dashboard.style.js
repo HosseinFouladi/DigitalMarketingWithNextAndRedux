@@ -7,7 +7,7 @@ export const DashboardContainer=styled.div`
  display: flex;
  width: 100%;
  height: 100%;
- font-family: 'Lemonada';
+ font-family: "Yekan"!important;
  overflow: scroll;
  background-color: ${colors.lightGray};
  z-index: 0;

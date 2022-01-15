@@ -18,7 +18,7 @@ const LoginForm=({type,submitForm})=>{
 
     },[setImage])
     return (
-          <Form onSubmit={handleSubmit(submitForm)}>
+          <Form type={type} onSubmit={handleSubmit(submitForm)}>
               {type==='signup'&& <InputBox>
             <Input type='text' placeholder='نام' {...register("name",{required:true,minLength:3})} />
                {errors.name && <ErrorSpan>{errors.name.type==='requird'?'نام خود را وارد کنید!':'نام وارد شده حداقل باید سه حرف داشته باشد !'}</ErrorSpan>}

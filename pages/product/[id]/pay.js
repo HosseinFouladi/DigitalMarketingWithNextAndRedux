@@ -9,7 +9,7 @@ const Pay=()=>{
     const user=useSelector(selectCurrentUser);
     useEffect(()=>{
         if(!user.name){
-            router.replace('/');
+            router.replace('/login');
         } 
     },[])
     return (

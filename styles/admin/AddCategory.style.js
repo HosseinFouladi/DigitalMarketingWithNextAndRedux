@@ -118,7 +118,7 @@ export const AddButton=styled.button`
  background-color: ${(props)=>{
         if(props.loading)
        return '#CCFFCC';
-     switch(props.types){
+     switch(props.chooseColor){
          case 'add':
              return colors.blue;
              case 'edit':

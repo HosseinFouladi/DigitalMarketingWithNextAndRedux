@@ -12,7 +12,7 @@ const Admin=()=>{
     useLayoutEffect(()=>{
 
         if(!user||user.role!='ادمین'){
-            router.replace('/');
+            router.replace('/login');
         }
           
     },[])

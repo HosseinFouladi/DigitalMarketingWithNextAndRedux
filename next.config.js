@@ -6,7 +6,8 @@ module.exports = {
     'www.mashin3.com','www.digikala.com','almasmal.com','media.aws.alkosto.com','mahbano.net','tse2.mm.bing.net','apple-home.ir'
     ,'rayanehamrah.com','atramarket.com','rudin.ir','www.sarabara.com','i.pinimg.com','i.pinimg.com','lomenzco.ir',
     'www.brandkade.com','salset.com','crepin.ir','cdnfa.com','rosecomputer.ir','aydalo.com','maralnahal.ir','static2.rokna.net',
-    '',''],
+    'encrypted-tbn0.gstatic.com','media.khabaronline.ir','encrypted-tbn0.gstatic.com','encrypted-tbn0.gstatic.com',
+    'dkstatics-public.digikala.com','tejaratnews.com','media.sarpoosh.com'],
   },
     
   env:{

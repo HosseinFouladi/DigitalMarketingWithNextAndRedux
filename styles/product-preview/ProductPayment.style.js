@@ -8,11 +8,11 @@ export const Payment=styled.section`
 direction: ltr;
 @media ${device.mobileS}{
     width: 100%;
-    height: 70%;
+    height: 20rem;
 }
 @media ${device.mobileM}{
     width: 100%;
-    height: 70%;
+    height: 25rem;
 }
 @media ${device.tablet}{
     width: 33%;
@@ -27,7 +27,7 @@ direction: ltr;
  padding:4rem 0;
  justify-content: start;
  background-color: ${colors.white};
- font-family: monospace;
+ font-family: "Yekan"!important;
 `
 export const PaymentBox=styled.div` 
  width: 95%;

@@ -17,7 +17,7 @@ const Product=()=>{
  
      useEffect(()=>{
          if(!user.name){
-             router.replace('/');
+             router.replace('/login');
          }
      },[])
     useLayoutEffect(()=>{

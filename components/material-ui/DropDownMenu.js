@@ -40,7 +40,7 @@ export default function MenuListComposition({name}) {
     setOpen(false);
     dispatch(logout());
     localStorage.removeItem('user');
-    router.push('/');
+    router.push('/login');
    
   };
 

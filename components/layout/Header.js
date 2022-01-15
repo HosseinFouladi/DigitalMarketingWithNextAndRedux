@@ -1,7 +1,7 @@
 
 import Link from "next/link";
 import { HeaderSection, CategoriesLink, FontAwesome, LinkText, SearchInput, SearchBox, SearchIcon, TimeContainer, ProfileContainer, ProfilePicture, UserImage, CartIcon, CartBox, ProductCount, SidebarContainer, CategoryBox } from "../../styles/layout/Layout.style";
-import { faBars, faCartPlus,  faSearch, faSortDown } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faCartPlus,  faSearch, faSortDown,faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentUser} from "../../redux/selectors/UserSelector";
 import MenuListComposition from "../material-ui/DropDownMenu";
@@ -21,8 +21,8 @@ const Header=()=>{
     const handleSearch=(e)=>{
         const {value}=e.target;
         dispatch(setSearchProducts(value))
-        if(window.location.href!='http://localhost:3000/product'){
-            router.push('/product')
+        if(window.location.href!='http://localhost:3000'){
+            router.push('/')
         }
     }
     const handleSidebar=useCallback(()=>{
@@ -39,8 +39,9 @@ const Header=()=>{
             <ProductCount>{user.products && user.products.length}</ProductCount>
         </CartBox>
         <ProfileContainer>
-            <FontAwesome  icon={faSortDown}/>
-            <MenuListComposition name={user.name && user.name}/>
+            {user.name&&<FontAwesome  icon={faSortDown}/>}
+            {user.name &&<MenuListComposition name={ user.name}/>}
+            {!user.name &&<Link href='/signup'><LinkText  margin={'no'}>ثبت نام</LinkText></Link>}
             <ProfilePicture >
                { user.imageUrl && <UserImage src={user.imageUrl} layout='fill'></UserImage>}
             </ProfilePicture>
@@ -56,7 +57,7 @@ const Header=()=>{
         <CategoriesLink onClick={handleSidebar}>
              <CategoryBox>
              <LinkText >لیست محصولات</LinkText>
-            <FontAwesome icon={faBars} ></FontAwesome>
+           {open? <FontAwesome icon={faTimes} ></FontAwesome>: <FontAwesome icon={faBars} ></FontAwesome>}
              </CategoryBox>
             <SidebarContainer isOpen={open}>
                 <SideBar></SideBar>
