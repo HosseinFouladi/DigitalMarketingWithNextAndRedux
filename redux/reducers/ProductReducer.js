@@ -180,6 +180,11 @@ export const ProductReducer=(state=Initial_Product,action)=>{
                                                                                                                         ...state,
                                                                                                                         currentProduct:{...state.currentProduct,isLiked:!(state.currentProduct.isLiked)}
                                                                                                                     }
+                                                                                                                    case PRODUCT_TYPES.SET_EMPTY_PRODUCT:
+                                                                                                                        return{
+                                                                                                                            ...state,
+                                                                                                                            currentProduct:{}
+                                                                                                                        }
                                                             
                                                        
         default:

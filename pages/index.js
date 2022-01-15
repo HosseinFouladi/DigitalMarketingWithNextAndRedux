@@ -2,25 +2,16 @@ import Dashboard from "../components/dashboard/Dashboard";
 import Layout from "../components/layout/Layout";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useRouter } from "next/router";
-import { useSelector } from "react-redux";
-import { selectCurrentUser } from "../redux/selectors/UserSelector";
+import { setEmpty } from "../redux/actions/ProductActions";
+
 const Index=()=>{
 
-    const router=useRouter();
-    const user=useSelector(selectCurrentUser);
-    
-   /* useEffect(()=>{
-        if(!user.name){
-            router.replace('/');
-        }
-  
-    },[])*/
-
+    const dispatch=useDispatch();
+    useEffect(()=>{
+        dispatch(setEmpty());
+    },[])
     return(
-       <div>
-           { <Layout><Dashboard type='product'/></Layout>}
-       </div>
+            <Layout><Dashboard type='product'/></Layout>
     )
 }
 export default Index;

@@ -20,9 +20,9 @@ const Product=()=>{
              router.replace('/login');
          }
      },[])
-    useLayoutEffect(()=>{
+    useEffect(()=>{
         dispatch(findproduct(id));
-    },[prod])
+    },[])
 
 
 

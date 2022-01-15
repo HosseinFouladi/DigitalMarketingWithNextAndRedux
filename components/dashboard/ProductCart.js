@@ -7,10 +7,12 @@ import Link from "next/link";
 import { useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { findCategory } from "../../redux/actions/ProductActions";
+import { useEffect } from "react";
 
 const ProductCart=({relatedProduct})=>{
 
     const dispatch=useDispatch();
+
     const determineCategory=useCallback((id)=>{
         dispatch(findCategory(id));
     })

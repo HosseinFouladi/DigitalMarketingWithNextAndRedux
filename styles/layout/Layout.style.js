@@ -23,7 +23,7 @@ const SetBorder=css`
  }
 `
 export const HeaderSection=styled.section` 
- //flex: 1;
+ flex-wrap: wrap;
  direction: ltr;
  position: fixed;
  z-index:20;
@@ -31,33 +31,42 @@ export const HeaderSection=styled.section`
  border-bottom: 1px solid gray;
  width: 100vw;
  display: flex;
- justify-content: space-between;
- 
  box-shadow: 0 0 5px 0 gray;
  border-radius: 3px;
- padding-top: 5px;
- padding-bottom: 5px;
- padding-right: 2px;
- align-items: center;
+ padding-right: 5px;
+ padding-left: 5px;
+
  @media ${device.mobileS}{
-    height: 2rem;
+    height: 5rem;
+    justify-content: end;
+    align-items: start;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 @media ${device.mobileM}{
     height: 2rem;
-    
+    justify-content: space-between;
+     align-items: center;
+     padding-top: 0px;
+    padding-bottom: 0px;
 }
 @media ${device.tablet}{
     height: 3rem;
-    
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 @media ${device.laptop}{
     height: 3.5rem;
-    
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 `
 export const CategoriesLink=styled.div` 
  //flex:1;
- width: 22%;
  display:flex;
  //justify-content: center;
  flex-direction: column;
@@ -65,6 +74,28 @@ export const CategoriesLink=styled.div`
  align-items: end;
  ;
  cursor: pointer;
+
+ @media ${device.mobileS}{
+    margin-bottom: 15px;
+    width: 45%;
+    order: 2;
+  
+}
+@media ${device.mobileM}{
+    margin-bottom:0;
+    width:22%;
+    order: 5;
+}
+@media ${device.tablet}{
+    margin-bottom:0;
+    width:22%;
+    order: 5;
+}
+@media ${device.laptop}{
+    margin-bottom:0;
+    width:22%;
+    order: 5;
+}
 `
 export const CategoryBox=styled.div` 
  width: 100%;
@@ -87,14 +118,14 @@ export const SidebarContainer=styled.section`
  z-index:20;
 
  @media ${device.mobileS}{
-    padding-top: 1.35rem;
-    width: 4rem;
-    margin-right: -.4rem;
+    padding-top: 4.3rem;
+    width: 5rem;
+    margin-right: -.6rem;
     visibility: ${(props)=>props.isOpen?'visible':'hidden'};
 }
 @media ${device.mobileM}{
-    padding-top: 1.65rem;
-    width: 6rem;
+    padding-top: 1.45rem;
+    width: 7rem;
     margin-right: -.6rem;
     visibility: hidden;
  ${CategoriesLink}:hover & {
@@ -107,8 +138,8 @@ export const SidebarContainer=styled.section`
  ${CategoriesLink}:hover & {
      visibility: visible;
  }
-    padding-top: 2.7rem;
-    width: 7rem;
+    padding-top: 2.1rem;
+    width: 9rem;
     margin-right: -.8rem;
 }
 @media ${device.laptop}{
@@ -116,8 +147,8 @@ export const SidebarContainer=styled.section`
  ${CategoriesLink}:hover & {
      visibility: visible;
  }
-    padding-top: 3.2rem;
-    width: 9rem;
+    padding-top: 2.4rem;
+    width: 10rem;
     margin-right: -1rem;
 }
 // position: relative;
@@ -127,7 +158,7 @@ export const ContentSection=styled.section`
  width: 100%;
  direction: ltr;
  @media ${device.mobileS}{
-    padding-top: 2rem;
+    padding-top: 4rem;
 }
 @media ${device.mobileM}{
     padding-top: 2rem;
@@ -143,16 +174,16 @@ overflow-y: scroll;
 `
 export const IconSize=css` 
   @media ${device.mobileS}{
-    font-size: .5rem;
+    font-size: .8rem;
 }
 @media ${device.mobileM}{
-    font-size: .5rem;
+    font-size: 1rem;
 }
 @media ${device.tablet}{
-    font-size:.7rem;
+    font-size:1rem;
 }
 @media ${device.laptop}{
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 `
 
@@ -171,24 +202,24 @@ cursor: pointer;
  color:${colors.black};
  font-weight: 550;
  @media ${device.mobileS}{
-    font-size: .5rem;
-    margin-right: ${(props)=>props.margin!='no'?'1px':''};
+    font-size: .7rem;
+    margin-right: ${(props)=>props.margin!='no'?'5px':''};
 }
 @media ${device.mobileM}{
     font-size: .6rem;
     margin-right: ${(props)=>props.margin!='no'?'5px':''};
 }
 @media ${device.tablet}{
-    font-size:.7rem;
+    font-size:.9rem;
     margin-right: ${(props)=>props.margin!='no'?'5px':''};
 }
 @media ${device.laptop}{
-    font-size: .9rem;
+    font-size: 1.2rem;
     margin-right: ${(props)=>props.margin!='no'?'5px':''};
 }
 `
 export const SearchInput=styled.input` 
- width: 90%;
+ width: 100%;
  text-align: right;
  background-color: #DDDDDD;
  border: none;
@@ -200,7 +231,7 @@ export const SearchInput=styled.input`
  }
  border-radius: .5rem;
  @media ${device.mobileS}{
-    font-size: .5rem;
+    font-size: .7rem;
     padding: .1rem 2rem;
 }
 @media ${device.mobileM}{
@@ -220,18 +251,41 @@ export const SearchInput=styled.input`
 export const SearchBox=styled.div` 
  position: relative;
  display: flex;
- justify-content: center;
+
  align-items: center;
  //flex:1;
- width:22%;
+ @media ${device.mobileS}{
+    justify-content: end;
+    margin-bottom: 15px;
+    width:45%;
+    order: 1
+}
+@media ${device.mobileM}{
+    justify-content: center;
+   width:25%;
+    order: 4;
+    margin-bottom: 0px;
+}
+@media ${device.tablet}{
+    justify-content: center;
+   width:25%;
+    order: 4;
+    margin-bottom: 0px;
+}
+@media ${device.laptop}{
+    justify-content: center;
+   width:25%;
+    order: 4;
+    margin-bottom: 0px;
+}
 `
 export const SearchIcon=styled(FontAwesomeIcon)` 
 
  position: absolute;
- right: .6rem;
+ right: .8rem;
  color:${colors.icons};
  @media ${device.mobileS}{
-    font-size: .3rem;
+    font-size: .5rem;
 }
 @media ${device.mobileM}{
     font-size: .5rem;
@@ -247,9 +301,25 @@ export const TimeContainer=styled.div`
 
  justify-content: center;
  //flex:1;
- width:20%;
+ //20
  display: ${(props)=>props.isAdmin==true?'flex':'none'};
  margin-left: 3px;
+ @media ${device.mobileS}{
+    order: 5;
+    width:35%;
+}
+@media ${device.mobileM}{
+    order:3;
+    width:15%;
+}
+@media ${device.tablet}{
+    order:3;
+    width:15%;
+}
+@media ${device.laptop}{
+    order:3;
+    width:15%;
+}
 `
 
 export const ProfileContainer=styled.div` 
@@ -257,7 +327,23 @@ export const ProfileContainer=styled.div`
  justify-content: center;
  align-items: center;
  //flex:1;
- width:23;
+
+ @media ${device.mobileS}{
+    width:45%;
+    order: 3;
+}
+@media ${device.mobileM}{
+    width:22%;
+    order: 2;
+}
+@media ${device.tablet}{
+    width:22%;
+    order: 2;
+}
+@media ${device.laptop}{
+    width:22%;
+    order: 2;
+}
  ;
  
 
@@ -282,20 +368,20 @@ export const ProfilePicture=styled.div`
 
  position: relative;
   @media ${device.mobileS}{
-    width: 1rem;
-   height: 1rem
-}
-@media ${device.mobileM}{
-    width: 1rem;
-   height: 1rem;
-}
- @media ${device.tablet}{
     width: 1.2rem;
    height: 1.2rem
 }
-@media ${device.laptop}{
-   width: 1.4rem;
+@media ${device.mobileM}{
+    width: 1.4rem;
    height: 1.4rem;
+}
+ @media ${device.tablet}{
+    width: 1.6rem;
+   height: 1.6rem;
+}
+@media ${device.laptop}{
+   width: 1.8rem;
+   height: 1.8rem;
 }
 `
 export const UserImage=styled(Image)` 
@@ -303,7 +389,7 @@ export const UserImage=styled(Image)`
 `
 export const CartIcon=styled(FontAwesomeIcon)` 
   @media ${device.mobileS}{
-    font-size:1rem ;
+    font-size:1.2rem ;
 }
 @media ${device.mobileM}{
    font-size:1rem;
@@ -318,10 +404,26 @@ export const CartIcon=styled(FontAwesomeIcon)`
 `
 export const CartBox=styled.div` 
  //flex:1; 
- width:13%;
  display: flex;
  justify-content: center;
  align-items: center;
+ 
+ @media ${device.mobileS}{
+    order:4;
+    width:15%;
+}
+@media ${device.mobileM}{
+    order:1;
+    width:11%;
+}
+ @media ${device.tablet}{
+    order:1;
+    width:11%;
+}
+@media ${device.laptop}{
+    order:1;
+    width:11%;}
+
 `
 export const ProductCount=styled.div` 
  border-radius: 50%;

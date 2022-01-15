@@ -114,3 +114,6 @@ export const failureEditingProduct=(err)=>({
 export const toggleLike=()=>({
     type:PRODUCT_TYPES.TOGGLE_LIKE,
 });
+export const setEmpty=()=>({
+    type:PRODUCT_TYPES.SET_EMPTY_PRODUCT,
+});

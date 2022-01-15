@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentUser } from "../../redux/selectors/UserSelector";
 import { deleteProductFromUserCart, toggleReservedCount } from "../../redux/actions/UserActions";
 import StripeCheckoutButton from "./StripeButton";
+import { height } from "@mui/system";
 const CartTable=()=>{
 
     const {products}=useSelector(selectCurrentUser);
@@ -18,14 +19,15 @@ const CartTable=()=>{
     }
 
     return(
-        <Table>
+ 
+       <div style={{width:'100%',height:'100%'}}>
+           { products.length>0&&   <Table>
             <HeadTr>
                 <Td>عملیات</Td>
                 <Td>حذف</Td>
                 <Td>عکس</Td>
                 <Td>قیمت</Td>
                 <Td>تعداد سفارش</Td>
-
                 <Td>نام محصول</Td>
                 <Td>ردیف</Td>  
             </HeadTr>
@@ -53,7 +55,9 @@ const CartTable=()=>{
                     </Tr>
                 })}
             </Tbody>
-        </Table>
+        </Table>}
+       </div>
+
     )
 }
 export default CartTable;

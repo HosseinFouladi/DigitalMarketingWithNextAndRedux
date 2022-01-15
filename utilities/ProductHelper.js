@@ -126,7 +126,8 @@ export const deleteProduct=(collection,id)=>{
 
     let isFound=false;
     const filtered=collection.filter(item=>{
-        isFound=true;
+        if(item.productId==id)
+          isFound=true;
         return item.productId!=id
     });
 

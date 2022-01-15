@@ -5,7 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 export const DropButton=styled(Button)`
 
 @media ${device.mobileS}{
-    font-size:.6rem !important;
+    font-size:.8rem !important;
     padding:3px 5px !important;
     min-width: .3rem!important;
 
@@ -29,7 +29,7 @@ export const DropButton=styled(Button)`
 export const Menuitem=styled(MenuItem)`
 
  @media ${device.mobileS}{
-    font-size:.6rem !important;
+    font-size:.8rem !important;
     padding:3px 5px !important;
     min-width: .3rem!important;
     min-height:.2rem!important;

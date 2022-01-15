@@ -63,19 +63,19 @@ flex:1;
 export const CategoryName=styled.span` 
 
 @media ${device.mobileS}{
-    font-size:.4rem;
-    margin-right: 2px;
-}
-@media ${device.mobileM}{
     font-size:.6rem;
     margin-right: 2px;
 }
-@media ${device.tablet}{
+@media ${device.mobileM}{
     font-size:.8rem;
+    margin-right: 2px;
+}
+@media ${device.tablet}{
+    font-size:1rem;
     margin-right: 5px;
 }
 @media ${device.laptop}{
-    font-size:1rem;
+    font-size:1.2rem;
     margin-right: 5px;
 }
 
@@ -87,20 +87,20 @@ export const ListIcons=styled.div`
  border-radius: 50%;
  margin-left: 2px;
  @media ${device.mobileS}{
-    width: .65rem;
-    height:.65rem;
-}
-@media ${device.mobileM}{
-    width: .6rem;
-    height:.6rem;
-}
-@media ${device.tablet}{
     width: .8rem;
     height:.8rem;
 }
-@media ${device.laptop}{
+@media ${device.mobileM}{
     width: 1rem;
     height:1rem;
+}
+@media ${device.tablet}{
+    width: 1.2rem;
+    height:1.2rem;
+}
+@media ${device.laptop}{
+    width: 1.4rem;
+    height:1.4rem;
 }
 
 `

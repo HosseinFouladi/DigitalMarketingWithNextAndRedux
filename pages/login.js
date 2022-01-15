@@ -17,7 +17,7 @@ export default function Home() {
           sessionStorage.setItem('user',JSON.stringify(currentUser));
           router.push('/product/');
       }else{
-        Notif("danger","username or password is incorrect!try again");
+        Notif("danger","نام کاربری یا رمز عبور اشتباه است","یافت نشد");
       }
     }
 
