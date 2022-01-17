@@ -22,8 +22,8 @@ export const PaymentPreview=styled.section`
     padding-bottom: 8rem;
 }
 @media ${device.laptop}{
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
 `

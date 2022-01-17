@@ -4,7 +4,7 @@ import Image from "next/image";
 import MarketingIcon from '../../public/Sale.png';
 import LoginForm from "../form/LoginForm";
 import Link from "next/link";
-import Backimg from '../../public/images/Background.png';
+import Backimg from '../../public/images/Web 1920 – 1@2x.png';
 const Register=({type,submitForm})=>{
 
     return(

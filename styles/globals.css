@@ -11,7 +11,7 @@ a {
 }
 
 .notification__item--success .notification__timer {
-  background-color: #00CC66;
+  background-color: #3366FF;
  }
 
  .notification{
@@ -75,8 +75,8 @@ a {
 }
 
 .notification__item--success{
-  background-color: #009966!important;
-  border-left: 8px solid #009966!important;
+  background-color: #385280!important;
+  border-left: 8px solid #385280!important;
 }
 
 

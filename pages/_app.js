@@ -16,7 +16,18 @@ import { insertAllCategories, insertAllProducts } from "../redux/actions/Product
 import categories from '../data/Categories.json';
 import products from '../data/Products.json';
 import { useEffect } from 'react';
+import nProgress from "nprogress";
+import 'nprogress/nprogress.css';
+import Router from "next/router";
 config.autoAddCss = false;
+
+Router.events.on("routeChangeStart", nProgress.start);
+Router.events.on("routeChangeError", nProgress.done);
+Router.events.on("routeChangeComplete", nProgress.done);
+
+
+
+
 function MyApp({ Component, pageProps }) {
 
   const dispatch=useDispatch();

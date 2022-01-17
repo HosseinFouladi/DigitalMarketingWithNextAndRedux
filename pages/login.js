@@ -15,7 +15,7 @@ export default function Home() {
       const{username,password}=currentUser;
       if(username===data.username&&password===data.password){
           sessionStorage.setItem('user',JSON.stringify(currentUser));
-          router.push('/product/');
+          router.push('/');
       }else{
         Notif("danger","نام کاربری یا رمز عبور اشتباه است","یافت نشد");
       }

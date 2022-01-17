@@ -18,8 +18,8 @@ export const device = {
     desktopL: `(min-width: ${size.desktop})`
   };
   export const colors={
-      primaryDark:'#009966',
-      primaryLight:'#00CC66',
+      primaryDark:'#385280',//#009966
+      primaryLight:'#0099CC',//#00CC66
       white:'#FFFFF0',
       black:'#000000',
       gray:'#777777',
@@ -33,7 +33,7 @@ export const device = {
 
   }
 
-  export const PrimayColor='#009966';
+  export const PrimayColor='#385280';
   export const secondaryPurple='#800080'
   export const secondaryOrange='#A52A2A'
   export const accentYellow='#DAA520';

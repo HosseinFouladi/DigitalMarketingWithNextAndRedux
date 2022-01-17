@@ -4,8 +4,8 @@ const StripeCheckoutButton=({price})=>{
 
     const publishKey="pk_test_51JlYSYHXo6lyXaQeMKt3BRppkHZ9SmtAsgmImTziFxwbK0ByJIEBEQ7RZyuUKJcxo0O7ejRKf4mS2isL1kaIhtw600omCSrAR6";
 
-    const handlePayment=(token)=>{;
-
+    const handlePayment=(token)=>{
+        console.log(token)
     }
     return(
         <StripeCheckout
