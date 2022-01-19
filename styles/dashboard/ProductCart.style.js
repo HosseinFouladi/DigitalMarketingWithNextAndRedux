@@ -36,8 +36,8 @@ export const CartContainer=styled.div`
 
 
  @media ${device.mobileS}{
-    width: 8rem;
-    height: 15rem;
+    width: 11rem;
+    height: 17rem;
 }
 @media ${device.mobileM}{
     width: 10rem;
