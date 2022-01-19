@@ -7,6 +7,10 @@ import '../styles/globals.css'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import{PersistGate}from 'redux-persist/integration/react';
 import { useDispatch, useStore } from "react-redux";
+import {Provider}from 'react-redux';
+import { Store,persistore} from "../redux/redux-setting/store";
+import styles from '../styles/Home.module.css';
+import CircularIndeterminate from "../components/material-ui/Spinner";
 import SpinnerContainer from "../components/material-ui/SpinnerContainer";
 import { insertAllCategories, insertAllProducts } from "../redux/actions/ProductActions";
 import categories from '../data/Categories.json';
@@ -20,6 +24,8 @@ config.autoAddCss = false;
 Router.events.on("routeChangeStart", nProgress.start);
 Router.events.on("routeChangeError", nProgress.done);
 Router.events.on("routeChangeComplete", nProgress.done);
+
+
 
 
 function MyApp({ Component, pageProps }) {
@@ -40,5 +46,4 @@ function MyApp({ Component, pageProps }) {
    
   </div>)
 }
-
 export default wrapper.withRedux(MyApp);

@@ -113,7 +113,7 @@ export const CartButton=styled.button`
 }
 &:hover{
     transform: translateY(-5px) scale(1.01);
-    box-shadow: 1px 1px 1px 1px 	#330099;
+    box-shadow: 1px 1px 1px 1px ${colors.lightBlue};
 }
 transition: all .3s;
 opacity: ${(props)=>props.opacity=='light'?'40%':'1'};
