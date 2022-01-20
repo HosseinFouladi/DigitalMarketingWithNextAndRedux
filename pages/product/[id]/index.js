@@ -1,4 +1,4 @@
-import { useEffect ,useLayoutEffect} from "react";
+import { useEffect, useLayoutEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Dashboard from "../../../components/dashboard/Dashboard";
 import Layout from "../../../components/layout/Layout";
@@ -6,41 +6,40 @@ import { findproduct } from "../../../redux/actions/ProductActions";
 import { selectCurrentProduct } from "../../../redux/selectors/ProductSelector";
 import { useRouter } from "next/router";
 import { selectCurrentUser } from "../../../redux/selectors/UserSelector";
-const Product=({id})=>{
+const Product = ({ id }) => {
+  // const id=window.location.href.split('/')[4];
+  const dispatch = useDispatch();
+  const prod = useSelector(selectCurrentProduct);
+  const router = useRouter();
+  const user = useSelector(selectCurrentUser);
 
+  useEffect(() => {
+    if (!user.name) {
+      router.replace("/login");
+    }
+  }, []);
+  useEffect(() => {
+    dispatch(findproduct(id));
+  }, [prod]);
 
-    // const id=window.location.href.split('/')[4];
-     const dispatch=useDispatch();
-     const prod=useSelector(selectCurrentProduct);
-     const router=useRouter();
-     const user=useSelector(selectCurrentUser);
- 
-     useEffect(()=>{
-         if(!user.name){
-             router.replace('/login');
-         }
-     },[])
-    useEffect(()=>{
-        dispatch(findproduct(id));
-    },[prod])
-
-
-
-    return(
-        <div>
-           {user.name? <Layout>
-                <Dashboard type='preview'/>
-            </Layout>:''}
-        </div>
-    )
-}
+  return (
+    <div>
+      {user.name ? (
+        <Layout>
+          <Dashboard type="preview" />
+        </Layout>
+      ) : (
+        ""
+      )}
+    </div>
+  );
+};
 export default Product;
 
-export async function getServerSideProps({params}) {
-
-    return {
-      props: {
-          id:params.id
-      }, 
-    }
-  }
+export async function getServerSideProps({ params }) {
+  return {
+    props: {
+      id: params.id,
+    },
+  };
+}

@@ -1,11 +1,11 @@
-import { createStore, applyMiddleware } from "redux"
-import { createWrapper } from "next-redux-wrapper"
-import {  rootReducers } from "./RootReducer"
-import { HYDRATE } from "next-redux-wrapper"
-import createSagaMiddleware  from '@redux-saga/core';
-import { RootSaga } from "./RootSaga"
-import  storage from 'redux-persist/lib/storage';
-import thunkMiddleware from 'redux-thunk';
+import { createStore, applyMiddleware } from "redux";
+import { createWrapper } from "next-redux-wrapper";
+import { rootReducers } from "./RootReducer";
+import { HYDRATE } from "next-redux-wrapper";
+import createSagaMiddleware from "@redux-saga/core";
+import { RootSaga } from "./RootSaga";
+import storage from "redux-persist/lib/storage";
+import thunkMiddleware from "redux-thunk";
 /*const sagaMiddleware=createSagaMiddleware();
 const middleware = [thunk,sagaMiddleware]
 
@@ -44,12 +44,11 @@ const reducer = (state, action) => {
   return { Store:wrapper, persistor }
 }*/
 
-
 // BINDING MIDDLEWARE
 const reducer = (state, action) => {
   if (action.type === HYDRATE) {
     const nextState = {
-      ...state, 
+      ...state,
       ...action.payload,
     };
     return nextState;
@@ -58,38 +57,39 @@ const reducer = (state, action) => {
   }
 };
 const bindMiddleware = (middleware) => {
-  if (process.env.NODE_ENV !== 'production') {
-    const { composeWithDevTools } = require('redux-devtools-extension');
+  if (process.env.NODE_ENV !== "production") {
+    const { composeWithDevTools } = require("redux-devtools-extension");
     return composeWithDevTools(applyMiddleware(...middleware));
   }
   return applyMiddleware(...middleware);
 };
-const sagaMiddleware=createSagaMiddleware();
+const sagaMiddleware = createSagaMiddleware();
 const makeStore = ({ isServer }) => {
   if (isServer) {
-    return createStore(reducer, bindMiddleware([thunkMiddleware,sagaMiddleware]));
+    return createStore(
+      reducer,
+      bindMiddleware([thunkMiddleware, sagaMiddleware])
+    );
   } else {
-
-    const { persistStore, persistReducer } = require('redux-persist');
+    const { persistStore, persistReducer } = require("redux-persist");
 
     const persistConfig = {
-      key: 'nextjs',
-      whitelist: ['user','product'], 
-      storage, 
+      key: "nextjs",
+      whitelist: ["user", "product"],
+      storage,
     };
 
-    const persistedReducer = persistReducer(persistConfig, reducer); 
+    const persistedReducer = persistReducer(persistConfig, reducer);
 
     const store = createStore(
       persistedReducer,
-      bindMiddleware([thunkMiddleware,sagaMiddleware])
-    ); 
+      bindMiddleware([thunkMiddleware, sagaMiddleware])
+    );
 
-    store.__persistor = persistStore(store); 
+    store.__persistor = persistStore(store);
     sagaMiddleware.run(RootSaga);
     return store;
   }
 };
 
 export const wrapper = createWrapper(makeStore);
-

@@ -1,4 +1,4 @@
-import styled ,{keyframes} from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { colors } from "../../utilities/GlobalVariablesStyles";
 import { device } from "../../utilities/GlobalVariablesStyles";
 
@@ -20,64 +20,62 @@ const animate = keyframes`
   }
 `;
 
-export const ImageBox=styled.section` 
-animation: ${animate} 2s linear;
-@media ${device.mobileS}{
+export const ImageBox = styled.section`
+  animation: ${animate} 2s linear;
+  @media ${device.mobileS} {
     width: 100%;
     height: 60%;
-}
-@media ${device.mobileM}{
+  }
+  @media ${device.mobileM} {
     width: 100%;
     height: 60%;
-}
-@media ${device.tablet}{
+  }
+  @media ${device.tablet} {
     width: 33%;
     height: 100%;
-}
-@media ${device.laptop}{
-   width: 33%;
-   height: 100%;
-}
- background-color: ${colors.white};
- display: flex;
- flex-direction: column;
- direction: ltr;
-`
+  }
+  @media ${device.laptop} {
+    width: 33%;
+    height: 100%;
+  }
+  background-color: ${colors.white};
+  display: flex;
+  flex-direction: column;
+  direction: ltr;
+`;
 
-export const ImageContainer=styled.div` 
- position: relative;
- flex: 7;
- width: 100%;
+export const ImageContainer = styled.div`
+  position: relative;
+  flex: 7;
+  width: 100%;
+`;
+export const OtherImagesBox = styled.div`
+  flex: 3;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+export const OtherImageContainer = styled.div`
+  position: relative;
+  border: 1px solid ${colors.lightGray};
+  margin-right: 1rem;
+  cursor: pointer;
 
-
-`
-export const OtherImagesBox=styled.div` 
- flex: 3;
- width: 100%;
- display: flex;
- justify-content: center;
- align-items: center;
-`
-export const OtherImageContainer=styled.div` 
- position:relative;
- border: 1px solid ${colors.lightGray};
- margin-right: 1rem;
- cursor: pointer;
-
- @media ${device.mobileS}{
+  @media ${device.mobileS} {
     width: 3rem;
     height: 3rem;
-}
-@media ${device.mobileM}{
+  }
+  @media ${device.mobileM} {
     width: 3rem;
     height: 3rem;
-}
-@media ${device.tablet}{
+  }
+  @media ${device.tablet} {
     width: 4rem;
     height: 4rem;
-}
-@media ${device.laptop}{
+  }
+  @media ${device.laptop} {
     width: 4.5rem;
     height: 4.5rem;
-}
-`
+  }
+`;
