@@ -18,7 +18,7 @@ import {
 import Image from "next/image";
 import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { faCheck, faStar } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faStar,faTimes } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { useCallback } from "react";
 import { useDispatch } from "react-redux";
@@ -41,7 +41,7 @@ const ProductCart = ({ relatedProduct }) => {
                 <Carousel.Item key={index}>
                   <Image
                     src={image}
-                    width="210"
+                    width="250"
                     height="170"
                     priority
                     alt={relatedProduct.productName}
@@ -72,7 +72,7 @@ const ProductCart = ({ relatedProduct }) => {
               <Score>
                 {relatedProduct.isAvailable ? "موجوددرانبار" : "ناموجود"}
               </Score>
-              <DetailIcon color="red" icon={faCheck}></DetailIcon>
+              <DetailIcon color={relatedProduct.isAvailable?'avalable':'red'} icon={relatedProduct.isAvailable?faCheck:faTimes}></DetailIcon>
             </PositionBox>
           </ScoreBox>
         </StockBox>

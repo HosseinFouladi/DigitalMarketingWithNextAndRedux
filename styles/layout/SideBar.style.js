@@ -26,7 +26,7 @@ export const CategoryList = styled.div`
   align-items: center;
   font-family: "Yekan" !important;
   height: 100%;
-  overflow: scroll;
+  overflow:auto;
 `;
 export const CategoryItem = styled.div`
   width: 100%;

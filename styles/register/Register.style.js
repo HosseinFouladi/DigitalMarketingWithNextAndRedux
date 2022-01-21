@@ -150,6 +150,7 @@ export const RightSection = styled.section`
   padding: 0 0.7rem;
 `;
 export const Hello = styled.h2`
+
   @media ${device.mobileS} {
     font-size: 0.8rem;
   }
@@ -194,6 +195,7 @@ export const GuideButton = styled.button`
   }
 `;
 export const Paragraph = styled.p`
+ text-align: right;
   @media ${device.mobileS} {
     font-size: 0.5rem;
   }

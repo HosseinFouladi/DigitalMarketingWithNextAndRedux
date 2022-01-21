@@ -52,7 +52,7 @@ const Register = ({ type, submitForm }) => {
               </AddressContainer>
             </RegisterSection>
             <RightSection>
-              <Hello>! سلام دوستان</Hello>
+              
               <Paragraph>
                 {type === "login"
                   ? "لطفا اطلاعات شخصی خودتون رو وارد کنید و با ما همراه باشید"

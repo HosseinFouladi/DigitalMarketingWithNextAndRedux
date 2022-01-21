@@ -163,7 +163,7 @@ export const ContentSection = styled.section`
   @media ${device.laptop} {
     padding-top: 3.5rem;
   }
-  overflow-y: scroll;
+  overflow: auto;
 `;
 export const IconSize = css`
   @media ${device.mobileS} {

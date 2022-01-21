@@ -93,3 +93,10 @@ body {
 	text-rendering: optimizeLegibility;
 	font-display: auto;
 }
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  top: 15px;
+  right: 50%!important;
+}

@@ -8,7 +8,7 @@ export const DashboardContainer = styled.div`
   width: 100%;
   height: 100%;
   font-family: "Yekan" !important;
-  overflow: scroll;
+  overflow: auto;
   background-color: ${colors.lightGray};
   z-index: 0;
 `;
@@ -16,7 +16,7 @@ export const ProductContainer = styled.section`
   width: 100%;
   height: 100%;
   display: flex;
-  overflow: scroll;
+  overflow: auto;
   padding: 1.5rem 1.5rem;
   flex-wrap: wrap;
   justify-content: center;

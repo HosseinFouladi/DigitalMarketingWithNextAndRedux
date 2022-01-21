@@ -41,8 +41,8 @@ export const CartContainer = styled.div`
     height: 16.5rem;
   }
   @media ${device.mobileM} {
-    width: 10rem;
-    height: 18rem;
+    width: 15rem;
+    height: 20rem;
   }
   @media ${device.tablet} {
     width: 11rem;
@@ -108,7 +108,7 @@ export const Score = styled.span`
 `;
 export const DetailIcon = styled(FontAwesomeIcon)`
   ${IconSize};
-  color: ${(props) => (props.color === "yellow" ? "#FF9900" : "#3399CC")};
+  color: ${(props) => (props.color === "yellow" ? "#FF9900" : props.color=='red'?'red':"#3399CC")};
 `;
 
 export const PriceContainer = styled.div`
