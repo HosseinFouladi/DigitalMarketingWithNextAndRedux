@@ -9,6 +9,8 @@ import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { logout } from "../../redux/actions/UserActions";
 import { DropButton, Menuitem } from "../../styles/material-ui/DropDown.style";
+import {faSortDown,} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesome}from '../../styles/layout/Layout.style'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -68,6 +70,7 @@ export default function MenuListComposition({ name }) {
           aria-haspopup="true"
           onClick={handleToggle}
         >
+          <FontAwesome icon={faSortDown} />
           {name}
         </DropButton>
         <Popper

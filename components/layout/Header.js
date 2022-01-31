@@ -58,7 +58,6 @@ const Header = () => {
         <ProductCount>{user.products && user.products.length}</ProductCount>
       </CartBox>
       <ProfileContainer>
-        {user.name && <FontAwesome icon={faSortDown} />}
         {user.name && <MenuListComposition name={user.name} />}
         {!user.name && (
           <Link href="/signup">

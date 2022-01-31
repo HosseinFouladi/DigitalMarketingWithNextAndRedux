@@ -114,7 +114,7 @@ const LoginForm = ({ type, submitForm }) => {
             id="avatar"
             onChange={handleUploadImage}
             accept="image/*"
-            required="true"
+           
           />
         </InputBox>
       )}
