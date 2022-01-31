@@ -52,7 +52,6 @@ const Register = ({ type, submitForm }) => {
               </AddressContainer>
             </RegisterSection>
             <RightSection>
-              
               <Paragraph>
                 {type === "login"
                   ? "لطفا اطلاعات شخصی خودتون رو وارد کنید و با ما همراه باشید"
